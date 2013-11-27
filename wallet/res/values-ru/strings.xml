@@ -56,7 +56,6 @@
 	<string name="send_coins_fragment_receiving_address_error">Некорректный Bitcoin-адрес!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network">Невозможно использовать адрес %s с этим бумажником!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">Невозможно использовать адрес неизвестной сети с этим бумажником</string>
-	<string name="send_coins_fragment_available_label">Доступно для отправки</string>
 	<string name="send_coins_fragment_pending">(BTC %s ожидают подтверждения)</string>
 	<string name="send_coins_fragment_amount_label">Величина оплаты</string>
 	<string name="send_coins_fragment_amount_empty">Введите сумму</string>
