@@ -72,7 +72,6 @@
 	<string name="send_coins_fragment_receiving_address_error">¡Dirección Bitcoin inválida!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network">¡No se puede usar la dirección %s con esta cartera!</string>
 	<string name="send_coins_fragment_receiving_address_error_cross_network_unknown">¡No se puede usar una dirección de red desconocida con esta cartera!</string>
-	<string name="send_coins_fragment_available_label">Disponible para gastar</string>
 	<string name="send_coins_fragment_pending">(BTC %s esperando confirmación)</string>
 	<string name="send_coins_fragment_amount_label">Cantidad a pagar</string>
 	<string name="send_coins_fragment_amount_empty">Introduce cantidad aquí</string>

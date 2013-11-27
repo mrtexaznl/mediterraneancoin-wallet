@@ -17,6 +17,8 @@
 
 package de.schildbach.wallet.ui;
 
+import java.math.BigInteger;
+
 import javax.annotation.Nonnull;
 
 import android.os.Handler;
@@ -70,7 +72,7 @@ public abstract class SendCoinsOfflineTask
 						@Override
 						public void run()
 						{
-							onInsufficientMoney();
+							onInsufficientMoney(x.missing);
 						}
 					});
 				}
@@ -91,7 +93,7 @@ public abstract class SendCoinsOfflineTask
 
 	protected abstract void onSuccess(@Nonnull Transaction transaction);
 
-	protected abstract void onInsufficientMoney();
+	protected abstract void onInsufficientMoney(@Nonnull BigInteger missing);
 
 	protected abstract void onFailure();
 }

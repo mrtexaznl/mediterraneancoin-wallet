@@ -26,6 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -123,7 +124,6 @@ public final class SendCoinsFragment extends SherlockFragment
 	private Button viewCancel;
 
 	private TextView popupMessageView;
-	private View popupAvailableView;
 	private PopupWindow popupWindow;
 
 	private CurrencyCalculatorLink amountCalculatorLink;
@@ -465,8 +465,6 @@ public final class SendCoinsFragment extends SherlockFragment
 
 		popupMessageView = (TextView) inflater.inflate(R.layout.send_coins_popup_message, container);
 
-		popupAvailableView = inflater.inflate(R.layout.send_coins_popup_available, container);
-
 		if (savedInstanceState != null)
 		{
 			restoreInstanceState(savedInstanceState);
@@ -746,9 +744,7 @@ public final class SendCoinsFragment extends SherlockFragment
 		}
 		else if (amount.signum() > 0)
 		{
-			final BigInteger estimated = wallet.getBalance(BalanceType.ESTIMATED);
 			final BigInteger available = wallet.getBalance(BalanceType.AVAILABLE);
-			final BigInteger pending = estimated.subtract(available);
 			// TODO subscribe to wallet changes
 
 			final BigInteger availableAfterAmount = available.subtract(amount);
@@ -758,12 +754,6 @@ public final class SendCoinsFragment extends SherlockFragment
 			{
 				// everything fine
 				isValidAmounts = true;
-			}
-			else
-			{
-				// not enough funds for amount
-				if (popups)
-					popupAvailable(amountCalculatorLink.activeView(), available, pending);
 			}
 		}
 		else
@@ -784,23 +774,6 @@ public final class SendCoinsFragment extends SherlockFragment
 		popupMessageView.setMaxWidth(getView().getWidth());
 
 		popup(anchor, popupMessageView);
-	}
-
-	private void popupAvailable(@Nonnull final View anchor, @Nonnull final BigInteger available, @Nonnull final BigInteger pending)
-	{
-		dismissPopup();
-
-		final CurrencyTextView viewAvailable = (CurrencyTextView) popupAvailableView.findViewById(R.id.send_coins_popup_available_amount);
-		viewAvailable.setPrefix(config.getBtcPrefix());
-		viewAvailable.setPrecision(config.getBtcPrecision(), config.getBtcShift());
-		viewAvailable.setAmount(available);
-
-		final TextView viewPending = (TextView) popupAvailableView.findViewById(R.id.send_coins_popup_available_pending);
-		viewPending.setVisibility(pending.signum() > 0 ? View.VISIBLE : View.GONE);
-		viewPending.setText(getString(R.string.send_coins_fragment_pending,
-				GenericUtils.formatValue(pending, config.getBtcMaxPrecision(), config.getBtcShift())));
-
-		popup(anchor, popupAvailableView);
 	}
 
 	private void popup(@Nonnull final View anchor, @Nonnull final View contentView)
@@ -871,12 +844,37 @@ public final class SendCoinsFragment extends SherlockFragment
 			}
 
 			@Override
-			protected void onInsufficientMoney()
+			protected void onInsufficientMoney(final BigInteger missing)
 			{
 				state = State.INPUT;
 				updateView();
 
-				activity.longToast(R.string.send_coins_error_msg);
+				final BigInteger estimated = wallet.getBalance(BalanceType.ESTIMATED);
+				final BigInteger available = wallet.getBalance(BalanceType.AVAILABLE);
+				final BigInteger pending = estimated.subtract(available);
+
+				final int btcShift = config.getBtcShift();
+				final int btcPrecision = btcShift == 0 ? Constants.BTC_MAX_PRECISION : Constants.MBTC_MAX_PRECISION;
+				final String btcPrefix = btcShift == 0 ? Constants.CURRENCY_CODE_BTC : Constants.CURRENCY_CODE_MBTC;
+
+				// TODO =================== localization!!!
+				final AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
+				dialog.setTitle("Not enough available money");
+				dialog.setMessage(String.format(
+						"You're missing %s.%s\n\nDo you want to send all you have?",
+						btcPrefix + ' ' + GenericUtils.formatValue(missing, btcPrecision, btcShift),
+						pending.signum() > 0 ? "\n\n"
+								+ getString(R.string.send_coins_fragment_pending, GenericUtils.formatValue(pending, btcPrecision, btcShift)) : ""));
+				dialog.setPositiveButton("Empty wallet", new DialogInterface.OnClickListener()
+				{
+					@Override
+					public void onClick(final DialogInterface dialog, final int which)
+					{
+						handleEmpty();
+					}
+				});
+				dialog.setNegativeButton(R.string.button_cancel, null);
+				dialog.show();
 			}
 
 			@Override
@@ -1044,7 +1042,7 @@ public final class SendCoinsFragment extends SherlockFragment
 		return state == State.INPUT && validatedAddress != null && isValidAmounts;
 	}
 
-	public void update(final @Nonnull PaymentIntent paymentIntent)
+	private void update(final @Nonnull PaymentIntent paymentIntent)
 	{
 		log.info("got {}", paymentIntent);
 
