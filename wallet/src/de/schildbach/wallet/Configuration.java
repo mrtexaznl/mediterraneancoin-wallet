@@ -49,7 +49,7 @@ public class Configuration
 	private static final String PREFS_KEY_BEST_CHAIN_HEIGHT_EVER = "best_chain_height_ever";
 	public static final String PREFS_KEY_REMIND_BACKUP = "remind_backup";
 
-	private static final String PREFS_DEFAULT_BTC_PRECISION = "4";
+	private static final String PREFS_DEFAULT_BTC_PRECISION = "2/3";
 
 	private static final Logger log = LoggerFactory.getLogger(Configuration.class);
 
@@ -58,6 +58,11 @@ public class Configuration
 		this.prefs = prefs;
 
 		this.lastVersionCode = prefs.getInt(PREFS_KEY_LAST_VERSION, 0);
+	}
+
+	public boolean hasBtcPrecision()
+	{
+		return prefs.contains(PREFS_KEY_BTC_PRECISION);
 	}
 
 	public int getBtcPrecision()
