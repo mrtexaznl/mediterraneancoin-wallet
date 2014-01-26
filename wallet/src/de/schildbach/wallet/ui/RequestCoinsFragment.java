@@ -22,7 +22,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 import javax.annotation.CheckForNull;
+import javax.annotation.Nonnull;
 
+import org.bitcoin.protocols.payments.Protos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,8 +63,11 @@ import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.widget.ShareActionProvider;
 import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.ECKey;
+import com.google.bitcoin.core.NetworkParameters;
 import com.google.bitcoin.core.Wallet;
+import com.google.bitcoin.script.ScriptBuilder;
 import com.google.bitcoin.uri.BitcoinURI;
+import com.google.protobuf.ByteString;
 
 import de.schildbach.wallet.AddressBookProvider;
 import de.schildbach.wallet.Configuration;
@@ -380,7 +385,12 @@ public final class RequestCoinsFragment extends SherlockFragment
 		qrView.setImageBitmap(qrCodeBitmap);
 
 		// update ndef message
-		final boolean nfcSuccess = Nfc.publishUri(nfcManager, getActivity(), request);
+		// final boolean nfcSuccess = Nfc.publishUri(nfcManager, getActivity(), request);
+
+		// TODO this must be labs-switchable for some transition time
+
+		final boolean nfcSuccess = Nfc.publishMimeObject(nfcManager, getActivity(), Constants.MIMETYPE_PAYMENTREQUEST, determinePaymentRequest(true),
+				false);
 
 		// update initiate request message
 		final SpannableStringBuilder initiateText = new SpannableStringBuilder(getString(R.string.request_coins_fragment_initiate_request_qr));
@@ -419,5 +429,41 @@ public final class RequestCoinsFragment extends SherlockFragment
 			uri.append(Bluetooth.MAC_URI_PARAM).append('=').append(bluetoothMac);
 		}
 		return uri.toString();
+	}
+
+	private byte[] determinePaymentRequest(final boolean includeBluetoothMac)
+	{
+		final ECKey key = (ECKey) addressView.getSelectedItem();
+		final Address address = key.toAddress(Constants.NETWORK_PARAMETERS);
+
+		return createPaymentRequest(amountCalculatorLink.getAmount(), address,
+				includeLabelView.isChecked() ? AddressBookProvider.resolveLabel(activity, address.toString()) : null, includeBluetoothMac
+						&& bluetoothMac != null ? "bt:" + bluetoothMac : null);
+	}
+
+	private static byte[] createPaymentRequest(final BigInteger amount, @Nonnull final Address toAddress, final String memo, final String paymentUrl)
+	{
+		if (amount != null && amount.compareTo(BigInteger.valueOf(Long.MAX_VALUE)) > 0)
+			throw new IllegalArgumentException("amount too big for protobuf: " + amount);
+
+		final Protos.Output.Builder output = Protos.Output.newBuilder();
+		output.setAmount(amount != null ? amount.longValue() : 0);
+		output.setScript(ByteString.copyFrom(ScriptBuilder.createOutputScript(toAddress).getProgram()));
+
+		final Protos.PaymentDetails.Builder paymentDetails = Protos.PaymentDetails.newBuilder();
+		paymentDetails
+				.setNetwork(Constants.NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? NetworkParameters.PMT_PROTOCOL_ID_MAINNET
+						: NetworkParameters.PMT_PROTOCOL_ID_TESTNET);
+		paymentDetails.addOutputs(output);
+		if (memo != null)
+			paymentDetails.setMemo(memo);
+		if (paymentUrl != null)
+			paymentDetails.setPaymentUrl(paymentUrl);
+		paymentDetails.setTime(System.currentTimeMillis());
+
+		final Protos.PaymentRequest.Builder paymentRequest = Protos.PaymentRequest.newBuilder();
+		paymentRequest.setSerializedPaymentDetails(paymentDetails.build().toByteString());
+
+		return paymentRequest.build().toByteArray();
 	}
 }

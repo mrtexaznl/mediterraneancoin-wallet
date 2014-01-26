@@ -157,6 +157,7 @@
 
 	<string name="input_parser_invalid_bitcoin_uri">Ungültige Bitcoin-URI:\n%s</string>
 	<string name="input_parser_invalid_address">Ungültige Bitcoin-Adresse gelesen!\n(Versuchst Du Mainnet/Testnet zu mischen?)</string>
+	<string name="input_parser_invalid_paymentrequest">Ungültige Zahlungsanforderung:\n%s</string>
 
 	<string name="preferences_activity_title">Einstellungen</string>
 	<string name="preferences_category_main">Einstellungen</string>
