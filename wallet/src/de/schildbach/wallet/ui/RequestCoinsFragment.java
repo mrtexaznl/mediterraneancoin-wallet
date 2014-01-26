@@ -377,11 +377,12 @@ public final class RequestCoinsFragment extends SherlockFragment
 		if (!isResumed())
 			return;
 
-		final String request = determineRequestStr(true);
+		// final String request = determineRequestStr(true);
+		final byte[] paymentRequest = determinePaymentRequest(true);
 
 		// update qr code
 		final int size = (int) (256 * getResources().getDisplayMetrics().density);
-		qrCodeBitmap = Qr.bitmap(request, size);
+		qrCodeBitmap = Qr.bitmap("BITCOIN:" + Qr.encodeBinary(paymentRequest), size);
 		qrView.setImageBitmap(qrCodeBitmap);
 
 		// update ndef message
@@ -389,8 +390,7 @@ public final class RequestCoinsFragment extends SherlockFragment
 
 		// TODO this must be labs-switchable for some transition time
 
-		final boolean nfcSuccess = Nfc.publishMimeObject(nfcManager, getActivity(), Constants.MIMETYPE_PAYMENTREQUEST, determinePaymentRequest(true),
-				false);
+		final boolean nfcSuccess = Nfc.publishMimeObject(nfcManager, getActivity(), Constants.MIMETYPE_PAYMENTREQUEST, paymentRequest, false);
 
 		// update initiate request message
 		final SpannableStringBuilder initiateText = new SpannableStringBuilder(getString(R.string.request_coins_fragment_initiate_request_qr));

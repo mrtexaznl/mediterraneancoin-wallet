@@ -66,7 +66,20 @@ public abstract class InputParser
 		@Override
 		public void parse()
 		{
-			if (input.startsWith("bitcoin:"))
+			if (input.startsWith("BITCOIN:"))
+			{
+				try
+				{
+					final byte[] serializedPaymentRequest = Qr.decodeBinary(input.substring(8));
+
+					bitcoinRequest(serializedPaymentRequest);
+				}
+				catch (final IOException x)
+				{
+					error(R.string.input_parser_invalid_paymentrequest, x.getMessage());
+				}
+			}
+			else if (input.startsWith("bitcoin:"))
 			{
 				try
 				{
@@ -110,7 +123,7 @@ public abstract class InputParser
 			{
 				try
 				{
-					final Transaction tx = new Transaction(Constants.NETWORK_PARAMETERS, Qr.decodeBinary(input));
+					final Transaction tx = new Transaction(Constants.NETWORK_PARAMETERS, Qr.decodeDecompressBinary(input));
 
 					directTransaction(tx);
 				}
