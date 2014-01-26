@@ -811,7 +811,8 @@ public final class SendCoinsFragment extends SherlockFragment
 		// create spend
 		final BigInteger amount = amountCalculatorLink.getAmount();
 		final SendRequest sendRequest = SendRequest.to(validatedAddress.address, amount);
-		sendRequest.changeAddress = WalletUtils.pickOldestKey(wallet).toAddress(Constants.NETWORK_PARAMETERS);
+		final Address changeAddress = WalletUtils.pickOldestKey(wallet).toAddress(Constants.NETWORK_PARAMETERS);
+		sendRequest.changeAddress = changeAddress;
 		sendRequest.emptyWallet = amount.equals(wallet.getBalance(BalanceType.AVAILABLE));
 
 		new SendCoinsOfflineTask(wallet, backgroundHandler)
@@ -840,7 +841,7 @@ public final class SendCoinsFragment extends SherlockFragment
 
 							updateView();
 						}
-					}.send(bluetoothMac, transaction); // send asynchronously
+					}.send(bluetoothMac, bip, transaction, changeAddress, amount); // send asynchronously
 				}
 
 				application.broadcastTransaction(sentTransaction);
