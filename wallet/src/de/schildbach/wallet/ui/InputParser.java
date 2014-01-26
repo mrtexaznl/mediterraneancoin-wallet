@@ -229,7 +229,7 @@ public abstract class InputParser
 
 		final long amount = output.getAmount();
 
-		bitcoinRequest(new PaymentIntent(script.getToAddress(Constants.NETWORK_PARAMETERS), paymentDetails.getMemo(),
+		bitcoinRequest(new PaymentIntent(PaymentIntent.BIP.BIP70, script.getToAddress(Constants.NETWORK_PARAMETERS), paymentDetails.getMemo(),
 				amount != 0 ? BigInteger.valueOf(amount) : null, bluetoothMac));
 	}
 

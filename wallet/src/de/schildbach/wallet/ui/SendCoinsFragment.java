@@ -130,6 +130,9 @@ public final class SendCoinsFragment extends SherlockFragment
 
 	private MenuItem scanAction;
 
+	@CheckForNull
+	private PaymentIntent.BIP bip = null;
+
 	private AddressAndLabel validatedAddress = null;
 	private boolean isValidAmounts = false;
 
@@ -585,6 +588,8 @@ public final class SendCoinsFragment extends SherlockFragment
 	{
 		outState.putSerializable("state", state);
 
+		outState.putSerializable("bip", bip);
+
 		if (validatedAddress != null)
 			outState.putParcelable("validated_address", validatedAddress);
 
@@ -602,6 +607,8 @@ public final class SendCoinsFragment extends SherlockFragment
 	private void restoreInstanceState(final Bundle savedInstanceState)
 	{
 		state = (State) savedInstanceState.getSerializable("state");
+
+		bip = (PaymentIntent.BIP) savedInstanceState.getSerializable("bip");
 
 		validatedAddress = savedInstanceState.getParcelable("validated_address");
 
@@ -1045,6 +1052,8 @@ public final class SendCoinsFragment extends SherlockFragment
 	private void update(final @Nonnull PaymentIntent paymentIntent)
 	{
 		log.info("got {}", paymentIntent);
+
+		this.bip = paymentIntent.bip;
 
 		try
 		{
