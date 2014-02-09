@@ -38,7 +38,7 @@ public class Constants
 	public static final boolean TEST = false; // R.class.getPackage().getName().contains("_test");
 
 	public static final NetworkParameters NETWORK_PARAMETERS = TEST ? TestNet3Params.get() : MainNetParams.get();
-	private static final String FILENAME_NETWORK_SUFFIX = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "" : "-testnet";
+	private static final String FILENAME_NETWORK_SUFFIX = ""; //NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "" : "-testnet";
 
 	public static final String WALLET_FILENAME = "wallet" + FILENAME_NETWORK_SUFFIX;
 
@@ -53,8 +53,8 @@ public class Constants
 
 	public static final String CHECKPOINTS_FILENAME = "checkpoints" + FILENAME_NETWORK_SUFFIX;
 
-	private static final String EXPLORE_BASE_URL_PROD = "https://explorer.mediterraneancoin.org";
-	private static final String EXPLORE_BASE_URL_TEST = "https://explorer.mediterraneancoin.org/testnet/";
+	private static final String EXPLORE_BASE_URL_PROD = "http://explorer.mediterraneancoin.org/";
+	private static final String EXPLORE_BASE_URL_TEST = "http://explorer.mediterraneancoin.org/testnet/";
 	public static final String EXPLORE_BASE_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? EXPLORE_BASE_URL_PROD
 			: EXPLORE_BASE_URL_TEST;
 
