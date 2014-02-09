@@ -65,6 +65,7 @@ import com.google.bitcoin.core.Transaction;
 import com.google.bitcoin.core.Transaction.Purpose;
 import com.google.bitcoin.core.TransactionConfidence.ConfidenceType;
 import com.google.bitcoin.core.Wallet;
+import com.google.bitcoin.script.Script;
 
 import de.schildbach.wallet.AddressBookProvider;
 import de.schildbach.wallet.Constants;
@@ -361,6 +362,12 @@ public class TransactionsListFragment extends SherlockListFragment implements Lo
 		{
 			adapter.notifyDataSetChanged();
 		}
+
+            @Override
+            public void onScriptsAdded(Wallet wallet, List<Script> scripts) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                adapter.notifyDataSetChanged();
+            }
 	};
 
 	private static class TransactionsLoader extends AsyncTaskLoader<List<Transaction>>
@@ -430,6 +437,12 @@ public class TransactionsListFragment extends SherlockListFragment implements Lo
 			{
 				forceLoad();
 			}
+
+                    @Override
+                    public void onScriptsAdded(Wallet wallet, List<Script> scripts) {
+                        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                        forceLoad();
+                    }
 		};
 
 		private static final Comparator<Transaction> TRANSACTION_COMPARATOR = new Comparator<Transaction>()

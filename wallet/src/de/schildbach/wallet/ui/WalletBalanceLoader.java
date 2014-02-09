@@ -26,8 +26,10 @@ import android.support.v4.content.AsyncTaskLoader;
 
 import com.google.bitcoin.core.Wallet;
 import com.google.bitcoin.core.Wallet.BalanceType;
+import com.google.bitcoin.script.Script;
 
 import de.schildbach.wallet.util.ThrottlingWalletChangeListener;
+import java.util.List;
 
 /**
  * @author Andreas Schildbach
@@ -75,5 +77,11 @@ public final class WalletBalanceLoader extends AsyncTaskLoader<BigInteger>
 		{
 			forceLoad();
 		}
+
+            @Override
+            public void onScriptsAdded(Wallet wallet, List<Script> scripts) {
+                //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                forceLoad();
+            }
 	};
 }
