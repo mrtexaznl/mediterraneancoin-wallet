@@ -35,7 +35,7 @@ import de.schildbach.wallet_test.R;
  */
 public class Constants
 {
-	public static final boolean TEST = R.class.getPackage().getName().contains("_test");
+	public static final boolean TEST = false; // R.class.getPackage().getName().contains("_test");
 
 	public static final NetworkParameters NETWORK_PARAMETERS = TEST ? TestNet3Params.get() : MainNetParams.get();
 	private static final String FILENAME_NETWORK_SUFFIX = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? "" : "-testnet";
@@ -47,28 +47,28 @@ public class Constants
 	public static final String WALLET_KEY_BACKUP_BASE58 = "key-backup-base58" + FILENAME_NETWORK_SUFFIX;
 
 	public static final File EXTERNAL_WALLET_BACKUP_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-	public static final String EXTERNAL_WALLET_KEY_BACKUP = "bitcoin-wallet-keys" + FILENAME_NETWORK_SUFFIX;
+	public static final String EXTERNAL_WALLET_KEY_BACKUP = "mediterraneancoin-wallet-keys" + FILENAME_NETWORK_SUFFIX;
 
 	public static final String BLOCKCHAIN_FILENAME = "blockchain" + FILENAME_NETWORK_SUFFIX;
 
 	public static final String CHECKPOINTS_FILENAME = "checkpoints" + FILENAME_NETWORK_SUFFIX;
 
-	private static final String EXPLORE_BASE_URL_PROD = "https://www.biteasy.com/";
-	private static final String EXPLORE_BASE_URL_TEST = "https://www.biteasy.com/testnet/";
+	private static final String EXPLORE_BASE_URL_PROD = "https://explorer.mediterraneancoin.org";
+	private static final String EXPLORE_BASE_URL_TEST = "https://explorer.mediterraneancoin.org/testnet/";
 	public static final String EXPLORE_BASE_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? EXPLORE_BASE_URL_PROD
 			: EXPLORE_BASE_URL_TEST;
 
 	public static final String MIMETYPE_TRANSACTION = "application/x-btctx";
 
 	public static final int MAX_NUM_CONFIRMATIONS = 7;
-	public static final String USER_AGENT = "Bitcoin Wallet";
+	public static final String USER_AGENT = "MediterraneanCoin Wallet";
 	public static final String DEFAULT_EXCHANGE_CURRENCY = "USD";
 	public static final int WALLET_OPERATION_STACK_SIZE = 256 * 1024;
 	public static final long BLOCKCHAIN_STATE_BROADCAST_THROTTLE_MS = DateUtils.SECOND_IN_MILLIS;
 	public static final long BLOCKCHAIN_UPTODATE_THRESHOLD_MS = DateUtils.HOUR_IN_MILLIS;
 
-	public static final String CURRENCY_CODE_BTC = "BTC";
-	public static final String CURRENCY_CODE_MBTC = "mBTC";
+	public static final String CURRENCY_CODE_BTC = "MED";
+	public static final String CURRENCY_CODE_MBTC = "mMED";
 	public static final char CHAR_HAIR_SPACE = '\u200a';
 	public static final char CHAR_THIN_SPACE = '\u2009';
 	public static final char CHAR_ALMOST_EQUAL_TO = '\u2248';
@@ -82,13 +82,13 @@ public class Constants
 	public static final int MBTC_MAX_PRECISION = 5;
 	public static final int LOCAL_PRECISION = 4;
 
-	public static final String DONATION_ADDRESS = "18CK5k1gajRKKSC7yVSTXT9LUzbheh1XY4";
-	public static final String REPORT_EMAIL = "wallet@schildbach.de";
+	public static final String DONATION_ADDRESS = "MZ3Zoam3CkaEKGLLVc63PN7S7bnUmVdqs7";
+	public static final String REPORT_EMAIL = "info@mediterraneancoin.org";
 	public static final String REPORT_SUBJECT_ISSUE = "Reported issue";
 	public static final String REPORT_SUBJECT_CRASH = "Crash report";
 
 	public static final String LICENSE_URL = "http://www.gnu.org/licenses/gpl-3.0.txt";
-	public static final String SOURCE_URL = "https://github.com/schildbach/bitcoin-wallet";
+	public static final String SOURCE_URL = "https://github.com/mrtexaznl/mediterraneancoin-wallet";
 	public static final String BINARY_URL = "http://code.google.com/p/bitcoin-wallet/downloads/list";
 	public static final String CREDITS_BITCOINJ_URL = "http://code.google.com/p/bitcoinj/";
 	public static final String CREDITS_ZXING_URL = "http://code.google.com/p/zxing/";
