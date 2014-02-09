@@ -9,7 +9,7 @@
 	<name>Bitcoin Integration for Android</name>
 
 	<parent>
-		<groupId>de.schildbach.wallet</groupId>
+		<groupId>de.schildbach.wallet.mediterraneancoin</groupId>
 		<artifactId>base</artifactId>
 		<version>1</version>
 	</parent>

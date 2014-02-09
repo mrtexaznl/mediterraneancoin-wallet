@@ -7,10 +7,10 @@
 	<artifactId>wallet</artifactId>
 	<packaging>apk</packaging>
 	<version>3.30-test</version>
-	<name>Bitcoin Wallet</name>
+	<name>MediterraneanCoin Wallet</name>
 
 	<parent>
-		<groupId>de.schildbach.wallet</groupId>
+		<groupId>de.schildbach.wallet.mediterraneancoin</groupId>
 		<artifactId>base</artifactId>
 		<version>1</version>
 	</parent>
@@ -52,13 +52,13 @@
 		<!-- com.google.bitcoin.* -->
 		<dependency>
 			<groupId>com.google</groupId>
-			<artifactId>bitcoinj</artifactId>
-			<version>0.10.3</version>
+			<artifactId>mediterraneancoinj</artifactId>
+			<version>0.12-SNAPSHOT</version>
 		</dependency>
 
 		<!-- de.schildbach.wallet.integration.android.* -->
 		<dependency>
-			<groupId>de.schildbach.wallet</groupId>
+			<groupId>de.schildbach.wallet.mediterraneancoin</groupId>
 			<artifactId>integration-android</artifactId>
 			<version>1.0</version>
 		</dependency>
