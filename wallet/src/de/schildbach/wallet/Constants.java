@@ -58,7 +58,7 @@ public class Constants
 	public static final String EXPLORE_BASE_URL = NETWORK_PARAMETERS.getId().equals(NetworkParameters.ID_MAINNET) ? EXPLORE_BASE_URL_PROD
 			: EXPLORE_BASE_URL_TEST;
 
-	public static final String MIMETYPE_TRANSACTION = "application/x-btctx";
+	public static final String MIMETYPE_TRANSACTION = "application/x-medtx";
 
 	public static final int MAX_NUM_CONFIRMATIONS = 7;
 	public static final String USER_AGENT = "MediterraneanCoin Wallet";

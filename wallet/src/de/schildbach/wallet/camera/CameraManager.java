@@ -139,6 +139,7 @@ public final class CameraManager
 		if (camera != null)
 		{
 			camera.stopPreview();
+			camera.setPreviewCallback(null);
 			camera.release();
 		}
 	}

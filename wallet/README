@@ -2,7 +2,7 @@ FILES
 
 Your wallet and your private keys are stored in app internal storage:
 
-/data/data/de.schildbach.wallet/files/wallet-protobuf (MODE_PRIVATE)
+/data/data/de.schildbach.wallet.mediterraneancoin/files/wallet-protobuf (MODE_PRIVATE)
 	Wallet for Mainnet
 
 /data/data/de.schildbach.wallet_test/files/wallet-protobuf-testnet (MODE_WORLD_READABLE | MODE_WORLD_WRITEABLE)

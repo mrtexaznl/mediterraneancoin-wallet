@@ -139,6 +139,8 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 		@Override
 		public void onThrottledWalletChanged()
 		{
+			System.out.println("WalletEventListener - onThrottledWalletChanged");
+			
 			notifyWidgets();
 		}
 
@@ -148,6 +150,8 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 			transactionsReceived.incrementAndGet();
 
 			final int bestChainHeight = blockChain.getBestChainHeight();
+			
+			System.out.println("WalletEventListener - onCoinsReceived - bestChainHeight=" + bestChainHeight);
 
 			try
 			{
@@ -178,11 +182,14 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 		@Override
 		public void onCoinsSent(final Wallet wallet, final Transaction tx, final BigInteger prevBalance, final BigInteger newBalance)
 		{
+			System.out.println("WalletEventListener - onCoinsSent");
+			
 			transactionsReceived.incrementAndGet();
 		}
 
             @Override
             public void onScriptsAdded(Wallet wallet, List<Script> scripts) {
+            	System.out.println("WalletEventListener - onScriptsAdded");
                 //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
                 notifyWidgets();
             }
@@ -190,6 +197,9 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 
 	private void notifyCoinsReceived(@Nullable final Address from, @Nonnull final BigInteger amount)
 	{
+		
+		System.out.println("WalletEventListener - notifyCoinsReceived");
+		
 		if (notificationCount == 1)
 			nm.cancel(NOTIFICATION_ID_COINS_RECEIVED);
 
@@ -288,7 +298,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 				@Override
 				public void run()
 				{
-					final boolean connectivityNotification = prefs.getBoolean(Constants.PREFS_KEY_CONNECTIVITY_NOTIFICATION, false);
+					final boolean connectivityNotification = prefs.getBoolean(Constants.PREFS_KEY_CONNECTIVITY_NOTIFICATION, true);
 
 					if (!connectivityNotification || numPeers == 0)
 					{
