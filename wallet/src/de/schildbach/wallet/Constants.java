@@ -49,9 +49,9 @@ public class Constants
 	public static final File EXTERNAL_WALLET_BACKUP_DIR = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 	public static final String EXTERNAL_WALLET_KEY_BACKUP = "mediterraneancoin-wallet-keys" + FILENAME_NETWORK_SUFFIX;
 
-	public static final String BLOCKCHAIN_FILENAME = "blockchain" + FILENAME_NETWORK_SUFFIX;
+	public static final String BLOCKCHAIN_FILENAME = "medblockchain" + FILENAME_NETWORK_SUFFIX;
 
-	public static final String CHECKPOINTS_FILENAME = "checkpoints" + FILENAME_NETWORK_SUFFIX;
+	public static final String CHECKPOINTS_FILENAME = "medcheckpoints" + FILENAME_NETWORK_SUFFIX;
 
 	private static final String EXPLORE_BASE_URL_PROD = "http://explorer.mediterraneancoin.org/";
 	private static final String EXPLORE_BASE_URL_TEST = "http://explorer.mediterraneancoin.org/testnet/";
