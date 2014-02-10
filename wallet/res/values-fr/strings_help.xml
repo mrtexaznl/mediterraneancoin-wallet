@@ -4,7 +4,7 @@
 	<string name="help_wallet">
 <![CDATA[
 		<p>
-			La partie supérieure gauche de l\'écran affiche l\'adresse Bitcoin que vous avez choisie et que les gens doivent connaître pour vous envoyer des Bitcoins.
+			La partie supérieure gauche de l\'écran affiche l\'adresse MediterraneanCoin que vous avez choisie et que les gens doivent connaître pour vous envoyer des MediterraneanCoins.
 			Tapez pour changer cette adresse.
 		</p>
 		<p>
@@ -31,7 +31,7 @@
 	<string name="help_request_coins">
 <![CDATA[
 		<p>
-			La partie supérieure gauche de l\'écran affiche l\'adresse Bitcoin que vous avez choisie et que les gens doivent connaître pour vous envoyer des Bitcoins.
+			La partie supérieure gauche de l\'écran affiche l\'adresse MediterraneanCoin que vous avez choisie et que les gens doivent connaître pour vous envoyer des MediterraneanCoins.
 			Tapez pour changer cette adresse.
 		</p>
 		<p>
@@ -59,15 +59,15 @@
 <![CDATA[
 		<p>
 			Vous avez commencé le processus d\'envoi de bitcoins.
-			Vous êtes arivé ici depuis l\'écran principal ou en cliqunat une URL Bitcoin dans votre navigateur mobile.
+			Vous êtes arivé ici depuis l\'écran principal ou en cliqunat une URL MediterraneanCoin dans votre navigateur mobile.
 		</p>
 		<p>
-			D\'abord, vous saisissez l\'adresse Bitcoin de destination.
+			D\'abord, vous saisissez l\'adresse MediterraneanCoin de destination.
 			L\'adresse sera complétée automatiquement pour les adresses enregistrées dans votre carnet.
-			Vous pouvez aussi scanner des codes QR d\'adresses Bitcoin ou de demande de Bitcoin en pressant le bouton QR dans la barre des actions.
+			Vous pouvez aussi scanner des codes QR d\'adresses MediterraneanCoin ou de demande de MediterraneanCoin en pressant le bouton QR dans la barre des actions.
 		</p>
 		<p>
-			Ensuite,vous pouvez voir combien de Bitcoins sont disponibles.
+			Ensuite,vous pouvez voir combien de MediterraneanCoins sont disponibles.
 			Tout écart avec le solde de l\'écran principal représente un montant qui n\'est pas encore confirmé et n\'est donc pas disponible.
 		</p>
 		<p>
@@ -75,7 +75,7 @@
 		</p>
 		<p>
 			Vous pouvez saisir un paiement hors-lighe.
-			Elle sera envoyée au prochain lancement de Bitcoin Wallet.
+			Elle sera envoyée au prochain lancement de MediterraneanCoin Wallet.
 			Si vous voulez le traitement le plus rapide possible de votre paiement, assurez vous d\'être bien connecté (c\'est à dire sur un WLAN).
 		</p>
 		<p>
@@ -88,23 +88,23 @@
 	<string name="help_safety">
 <![CDATA[
 		<p>
-			<b>Quelques mots sur la sécurité de vos Bitcoins:</b>
+			<b>Quelques mots sur la sécurité de vos MediterraneanCoins:</b>
 		</p>
 		<p>
-			Les Bitcoins sont stockés sur l\'appareil avec Bitcoin Wallet.
-			<b>Si vous le perdez, vous perdez vos Bitcoins.</b>
+			Les MediterraneanCoins sont stockés sur l\'appareil avec MediterraneanCoin Wallet.
+			<b>Si vous le perdez, vous perdez vos MediterraneanCoins.</b>
 		</p>
 		<p>
 			Cela signifie que vous avez besoin de <b>sauvegarder vos clés privées</b>!
 			Conservez-les dans un endroit sécurisé et souvenez-vous de votre mot de passe.
 		</p>
 		<p>
-			<b>Avant de désinstaller Bitcoin Wallet</b> (ou d\'effacer les données de l\'application/effacer les données de votre appareil), <b>transférez vos Bitcoins dans un autre porte-monnaie</b>.
+			<b>Avant de désinstaller MediterraneanCoin Wallet</b> (ou d\'effacer les données de l\'application/effacer les données de votre appareil), <b>transférez vos MediterraneanCoins dans un autre porte-monnaie</b>.
 			Tout les bitcoins restant seront perdus.
 		</p>
 		<p>
 			<b>Les paiements sont irréversibles</b>.
-			Si vous envoyez vos Bitcoins dans le vide, il n\'y a aucun moyen de les récupérer sauf si vous connaissez le destinataire et qu\'il est d\'accord pour vous les renvoyer.
+			Si vous envoyez vos MediterraneanCoins dans le vide, il n\'y a aucun moyen de les récupérer sauf si vous connaissez le destinataire et qu\'il est d\'accord pour vous les renvoyer.
 		</p>
 		<p>
 			<b>Gardez votre appareil mobile en sécurité!</b>
@@ -113,7 +113,7 @@
 		</p>
 		<p>
 			Minimisez les risques!
-			<b>Utilisez Bitcoin Wallet seulement pour des petits montants</b> pour un usage quotidien.
+			<b>Utilisez MediterraneanCoin Wallet seulement pour des petits montants</b> pour un usage quotidien.
 		</p>
 	]]>
 	</string>
