@@ -62,9 +62,9 @@ public class Constants
 
 	public static final int MAX_NUM_CONFIRMATIONS = 7;
 	public static final String USER_AGENT = "MediterraneanCoin Wallet";
-	public static final String DEFAULT_EXCHANGE_CURRENCY = "USD";
+	public static final String DEFAULT_EXCHANGE_CURRENCY = "BTC";
 	public static final int WALLET_OPERATION_STACK_SIZE = 256 * 1024;
-	public static final long BLOCKCHAIN_STATE_BROADCAST_THROTTLE_MS = DateUtils.SECOND_IN_MILLIS;
+	public static final long BLOCKCHAIN_STATE_BROADCAST_THROTTLE_MS = 100; //DateUtils.SECOND_IN_MILLIS;
 	public static final long BLOCKCHAIN_UPTODATE_THRESHOLD_MS = DateUtils.HOUR_IN_MILLIS;
 
 	public static final String CURRENCY_CODE_BTC = "MED";

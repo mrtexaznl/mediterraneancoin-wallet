@@ -304,7 +304,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 		private void changed(final int numPeers)
 		{
                     
-                        log.info("PeerConnectivityListener - changed");
+            log.info("PeerConnectivityListener - changed");
                         
 			if (stopped.get())
 				return;
@@ -354,6 +354,9 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 			delayHandler.removeCallbacksAndMessages(null);
 
 			final long now = System.currentTimeMillis();
+			
+			log.info("PeerEventListener blockchainDownloadListener - bestChainHeightEver=" + bestChainHeightEver + ", "
+					+ " lastMessageTime=" + lastMessageTime.get() + ", delta=" + (now - lastMessageTime.get()));
 
 			if (now - lastMessageTime.get() > Constants.BLOCKCHAIN_STATE_BROADCAST_THROTTLE_MS)
 				delayHandler.post(runnable);
