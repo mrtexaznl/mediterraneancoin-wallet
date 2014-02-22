@@ -52,7 +52,7 @@ import com.actionbarsherlock.app.SherlockListFragment;
 import com.google.bitcoin.core.Peer;
 import com.google.bitcoin.core.VersionMessage;
 
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 
 /**
  * @author Andreas Schildbach

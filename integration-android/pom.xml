@@ -9,7 +9,7 @@
 	<name>MediterraneanCoin Integration for Android</name>
 
 	<parent>
-		<groupId>de.schildbach.wallet.mediterraneancoin</groupId>
+		<groupId>org.mediterraneancoin.wallet.mediterraneancoin</groupId>
 		<artifactId>base</artifactId>
 		<version>1</version>
 	</parent>

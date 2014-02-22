@@ -46,7 +46,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 
 /**
  * @author Andreas Schildbach

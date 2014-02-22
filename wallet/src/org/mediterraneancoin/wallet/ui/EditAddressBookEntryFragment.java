@@ -37,7 +37,7 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 
 /**
  * @author Andreas Schildbach

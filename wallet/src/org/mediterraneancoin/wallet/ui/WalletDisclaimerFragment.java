@@ -39,7 +39,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 
 /**
  * @author Andreas Schildbach

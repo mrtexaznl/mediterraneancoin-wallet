@@ -52,7 +52,7 @@ import android.widget.TextView;
 
 import com.google.bitcoin.core.Wallet;
 
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 
 /**
  * @author Andreas Schildbach

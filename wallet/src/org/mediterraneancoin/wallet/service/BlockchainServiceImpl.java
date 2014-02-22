@@ -94,7 +94,7 @@ import com.google.bitcoin.store.BlockStoreException;
 import com.google.bitcoin.store.SPVBlockStore;
 import com.google.common.util.concurrent.Service.State;
 
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 import java.util.logging.Level;
 
 /**

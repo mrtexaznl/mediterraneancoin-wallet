@@ -42,7 +42,7 @@ import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.ECKey;
 import com.google.bitcoin.core.Wallet;
 
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 
 public class WalletAddressesAdapter extends BaseAdapter
 {

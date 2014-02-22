@@ -51,7 +51,7 @@ import android.widget.TextView.OnEditorActionListener;
 
 import com.google.bitcoin.core.Transaction;
 
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 
 /**
  * @author Andreas Schildbach

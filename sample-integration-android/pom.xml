@@ -10,7 +10,7 @@
 	<name>Sample for MediterraneanCoin Integration for Android</name>
 
 	<parent>
-		<groupId>de.schildbach.wallet.mediterraneancoin</groupId>
+		<groupId>org.mediterraneancoin.wallet.mediterraneancoin</groupId>
 		<artifactId>base</artifactId>
 		<version>1</version>
 	</parent>
@@ -25,9 +25,9 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- de.schildbach.wallet.integration.android.* -->
+		<!-- org.mediterraneancoin.wallet.integration.android.* -->
 		<dependency>
-			<groupId>de.schildbach.wallet.mediterraneancoin</groupId>
+			<groupId>org.mediterraneancoin.wallet.mediterraneancoin</groupId>
 			<artifactId>integration-android</artifactId>
 			<version>1.0</version>
 		</dependency>

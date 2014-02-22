@@ -46,7 +46,7 @@ import android.widget.TextView;
 import com.google.bitcoin.core.Address;
 import com.google.bitcoin.uri.BitcoinURI;
 
-import de.schildbach.wallet_test.R;
+import org.mediterraneancoin.wallet_test.R;
 
 /**
  * @author Andreas Schildbach

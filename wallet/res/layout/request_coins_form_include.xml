@@ -37,7 +37,7 @@
 				android:imeOptions="flagNoExtractUi"
 				android:textSize="@dimen/font_size_large"
 				tools:ignore="TextFields" />
-		</de.schildbach.wallet.ui.CurrencyAmountView>
+		</org.mediterraneancoin.wallet.ui.CurrencyAmountView>
 
 		<org.mediterraneancoin.wallet.ui.CurrencyAmountView
 			android:id="@+id/request_coins_amount_local"
@@ -52,7 +52,7 @@
 				android:imeOptions="flagNoExtractUi"
 				android:textSize="@dimen/font_size_large"
 				tools:ignore="TextFields" />
-		</de.schildbach.wallet.ui.CurrencyAmountView>
+		</org.mediterraneancoin.wallet.ui.CurrencyAmountView>
 	</LinearLayout>
 
 	<TextView

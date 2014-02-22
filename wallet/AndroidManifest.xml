@@ -179,9 +179,17 @@
 			<meta-data
 				android:name="android.appwidget.provider"
 				android:resource="@xml/wallet_balance_widget" />
-		</receiveorg.mediterraneancoin.wallet.service.BlockchainServiceImplet.service.BlockchainServiceImpl"
-			android:exported="false"org.mediterraneancoin.wallet.offline.AcceptBluetoothServicet.offline.AcceptBluetoothService"
-			android:exporteorg.mediterraneancoin.wallet.service.AutosyncReceiverhildbach.wallet.service.AutosyncReceiver" >
+		</receiver>
+		
+
+		<service
+			android:name="org.mediterraneancoin.wallet.service.BlockchainServiceImpl"
+			android:exported="false" />
+		<service
+			android:name="org.mediterraneancoin.wallet.offline.AcceptBluetoothService"
+			android:exported="false" />
+
+		<receiver android:name="org.mediterraneancoin.wallet.service.AutosyncReceiver" >
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 			</intent-filter>
