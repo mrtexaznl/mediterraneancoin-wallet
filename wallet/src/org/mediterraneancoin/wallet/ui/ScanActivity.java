@@ -15,12 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.io.IOException;
 import java.util.EnumMap;
 import java.util.Map;
 
+import org.mediterraneancoin.wallet.camera.CameraManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,7 +59,6 @@ import com.google.zxing.ResultPointCallback;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 
-import de.schildbach.wallet.camera.CameraManager;
 import de.schildbach.wallet_test.R;
 
 /**

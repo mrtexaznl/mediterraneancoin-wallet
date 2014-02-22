@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,6 +25,12 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.WalletApplication;
+import org.mediterraneancoin.wallet.service.BlockchainService;
+import org.mediterraneancoin.wallet.service.BlockchainServiceImpl;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -60,11 +66,6 @@ import com.google.bitcoin.core.StoredBlock;
 import com.google.bitcoin.core.Transaction;
 import com.google.bitcoin.core.Wallet;
 
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.WalletApplication;
-import de.schildbach.wallet.service.BlockchainService;
-import de.schildbach.wallet.service.BlockchainServiceImpl;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 
 /**

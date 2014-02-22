@@ -15,15 +15,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.WalletApplication;
 
 import com.google.bitcoin.core.Transaction;
 import com.google.bitcoin.core.VerificationException;
 import com.google.bitcoin.core.Wallet;
 
-import de.schildbach.wallet.WalletApplication;
 
 /**
  * @author Andreas Schildbach

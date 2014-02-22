@@ -74,7 +74,7 @@
 		android:orientation="horizontal"
 		android:showDividers="middle" >
 
-		<de.schildbach.wallet.ui.CurrencyAmountView
+		<org.mediterraneancoin.wallet.ui.CurrencyAmountView
 			android:id="@+id/send_coins_amount_btc"
 			android:layout_width="0px"
 			android:layout_height="wrap_content"
@@ -89,7 +89,7 @@
 				tools:ignore="TextFields" />
 		</de.schildbach.wallet.ui.CurrencyAmountView>
 
-		<de.schildbach.wallet.ui.CurrencyAmountView
+		<org.mediterraneancoin.wallet.ui.CurrencyAmountView
 			android:id="@+id/send_coins_amount_local"
 			android:layout_width="0px"
 			android:layout_height="wrap_content"

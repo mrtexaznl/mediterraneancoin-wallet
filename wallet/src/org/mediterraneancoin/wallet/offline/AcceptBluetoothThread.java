@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.offline;
+package org.mediterraneancoin.wallet.offline;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -24,13 +24,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import javax.annotation.Nonnull;
 
+import org.mediterraneancoin.wallet.util.Bluetooth;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
-import de.schildbach.wallet.util.Bluetooth;
 
 /**
  * @author Shahar Livne

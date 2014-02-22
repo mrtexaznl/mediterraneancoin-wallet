@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.io.IOException;
 import java.math.BigInteger;
@@ -23,6 +23,10 @@ import java.util.regex.Pattern;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.util.Bluetooth;
+import org.mediterraneancoin.wallet.util.Qr;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -39,9 +43,6 @@ import com.google.bitcoin.core.Transaction;
 import com.google.bitcoin.uri.BitcoinURI;
 import com.google.bitcoin.uri.BitcoinURIParseException;
 
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.util.Bluetooth;
-import de.schildbach.wallet.util.Qr;
 import de.schildbach.wallet_test.R;
 
 /**

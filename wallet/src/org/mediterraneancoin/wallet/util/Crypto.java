@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.schildbach.wallet.util;
+package org.mediterraneancoin.wallet.util;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -26,6 +26,7 @@ import java.security.SecureRandom;
 
 import javax.annotation.Nonnull;
 
+import org.mediterraneancoin.wallet.Constants;
 import org.spongycastle.crypto.BufferedBlockCipher;
 import org.spongycastle.crypto.CipherParameters;
 import org.spongycastle.crypto.DataLengthException;
@@ -38,7 +39,6 @@ import org.spongycastle.crypto.paddings.PaddedBufferedBlockCipher;
 import org.spongycastle.crypto.params.ParametersWithIV;
 
 import android.util.Base64;
-import de.schildbach.wallet.Constants;
 
 /**
  * This class encrypts and decrypts a string in a manner that is compatible with OpenSSL.

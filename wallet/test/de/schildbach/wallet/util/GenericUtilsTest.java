@@ -22,6 +22,7 @@ import static org.junit.Assert.assertEquals;
 import java.math.BigInteger;
 
 import org.junit.Test;
+import org.mediterraneancoin.wallet.util.GenericUtils;
 
 import com.google.bitcoin.core.NetworkParameters;
 

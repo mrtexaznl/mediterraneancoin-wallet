@@ -15,11 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.math.BigInteger;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.util.ThrottlingWalletChangeListener;
 
 import android.content.Context;
 import android.support.v4.content.AsyncTaskLoader;
@@ -28,7 +30,6 @@ import com.google.bitcoin.core.Wallet;
 import com.google.bitcoin.core.Wallet.BalanceType;
 import com.google.bitcoin.script.Script;
 
-import de.schildbach.wallet.util.ThrottlingWalletChangeListener;
 import java.util.List;
 
 /**

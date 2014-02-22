@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.math.BigInteger;
 import java.util.LinkedList;
@@ -23,6 +23,16 @@ import java.util.List;
 
 import javax.annotation.CheckForNull;
 
+import org.mediterraneancoin.wallet.AddressBookProvider;
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.ExchangeRatesProvider;
+import org.mediterraneancoin.wallet.WalletApplication;
+import org.mediterraneancoin.wallet.ExchangeRatesProvider.ExchangeRate;
+import org.mediterraneancoin.wallet.offline.AcceptBluetoothService;
+import org.mediterraneancoin.wallet.util.BitmapFragment;
+import org.mediterraneancoin.wallet.util.Bluetooth;
+import org.mediterraneancoin.wallet.util.Nfc;
+import org.mediterraneancoin.wallet.util.Qr;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -66,16 +76,6 @@ import com.google.bitcoin.core.ECKey;
 import com.google.bitcoin.core.Wallet;
 import com.google.bitcoin.uri.BitcoinURI;
 
-import de.schildbach.wallet.AddressBookProvider;
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.ExchangeRatesProvider;
-import de.schildbach.wallet.ExchangeRatesProvider.ExchangeRate;
-import de.schildbach.wallet.WalletApplication;
-import de.schildbach.wallet.offline.AcceptBluetoothService;
-import de.schildbach.wallet.util.BitmapFragment;
-import de.schildbach.wallet.util.Bluetooth;
-import de.schildbach.wallet.util.Nfc;
-import de.schildbach.wallet.util.Qr;
 import de.schildbach.wallet_test.R;
 
 /**

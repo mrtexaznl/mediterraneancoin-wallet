@@ -15,10 +15,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import org.mediterraneancoin.wallet.AddressBookProvider;
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -33,9 +37,6 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
-import de.schildbach.wallet.AddressBookProvider;
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 
 /**

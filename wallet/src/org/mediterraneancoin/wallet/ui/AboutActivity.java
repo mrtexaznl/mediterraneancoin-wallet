@@ -15,7 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
+
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.WalletApplication;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -28,8 +31,6 @@ import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.actionbarsherlock.view.MenuItem;
 import com.google.bitcoin.core.VersionMessage;
 
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.WalletApplication;
 import de.schildbach.wallet_test.R;
 
 /**

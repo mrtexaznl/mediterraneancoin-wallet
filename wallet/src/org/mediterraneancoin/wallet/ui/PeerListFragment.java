@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.net.InetAddress;
 import java.util.List;
@@ -23,6 +23,9 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.service.BlockchainService;
+import org.mediterraneancoin.wallet.service.BlockchainServiceImpl;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -49,8 +52,6 @@ import com.actionbarsherlock.app.SherlockListFragment;
 import com.google.bitcoin.core.Peer;
 import com.google.bitcoin.core.VersionMessage;
 
-import de.schildbach.wallet.service.BlockchainService;
-import de.schildbach.wallet.service.BlockchainServiceImpl;
 import de.schildbach.wallet_test.R;
 
 /**

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.util;
+package org.mediterraneancoin.wallet.util;
 
 import java.util.Arrays;
 
@@ -23,12 +23,13 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.mediterraneancoin.wallet.Constants;
+
 import android.app.Activity;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.NfcManager;
-import de.schildbach.wallet.Constants;
 
 /**
  * @author Andreas Schildbach

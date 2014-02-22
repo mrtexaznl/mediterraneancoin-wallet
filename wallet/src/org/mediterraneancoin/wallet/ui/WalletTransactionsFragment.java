@@ -15,7 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
+
+import org.mediterraneancoin.wallet.ui.TransactionsListFragment.Direction;
+import org.mediterraneancoin.wallet.util.ViewPagerTabs;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -25,8 +28,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import de.schildbach.wallet.ui.TransactionsListFragment.Direction;
-import de.schildbach.wallet.util.ViewPagerTabs;
 import de.schildbach.wallet_test.R;
 
 /**

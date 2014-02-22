@@ -15,7 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
+
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.service.BlockchainService;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -36,8 +39,6 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.service.BlockchainService;
 import de.schildbach.wallet_test.R;
 
 /**

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet;
+package org.mediterraneancoin.wallet;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -35,6 +35,8 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 
 import org.json.JSONObject;
+import org.mediterraneancoin.wallet.util.GenericUtils;
+import org.mediterraneancoin.wallet.util.Io;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,8 +47,6 @@ import android.database.MatrixCursor;
 import android.net.Uri;
 import android.provider.BaseColumns;
 import android.text.format.DateUtils;
-import de.schildbach.wallet.util.GenericUtils;
-import de.schildbach.wallet.util.Io;
 
 /**
  * @author Andreas Schildbach

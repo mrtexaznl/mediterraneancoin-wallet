@@ -10,7 +10,7 @@
 	<name>MediterraneanCoin Wallet</name>
 
 	<parent>
-		<groupId>de.schildbach.wallet.mediterraneancoin</groupId>
+		<groupId>org.mediterraneancoin.wallet.mediterraneancoin</groupId>
 		<artifactId>base</artifactId>
 		<version>1</version>
 	</parent>
@@ -56,9 +56,9 @@
 			<version>0.12-SNAPSHOT</version>
 		</dependency>
 
-		<!-- de.schildbach.wallet.integration.android.* -->
+		<!-- org.mediterraneancoin.wallet.integration.android.* -->
 		<dependency>
-			<groupId>de.schildbach.wallet.mediterraneancoin</groupId>
+			<groupId>org.mediterraneancoin.wallet.mediterraneancoin</groupId>
 			<artifactId>integration-android</artifactId>
 			<version>1.0</version>
 		</dependency>
@@ -194,7 +194,7 @@
 				<artifactId>findbugs-maven-plugin</artifactId>
 				<version>2.5.2</version>
 				<configuration>
-					<onlyAnalyze>de.schildbach.wallet.-</onlyAnalyze>
+					<onlyAnalyze>org.mediterraneancoin.wallet.-</onlyAnalyze>
 				</configuration>
 			</plugin>
 		</plugins>

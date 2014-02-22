@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
@@ -24,6 +24,10 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.AddressBookProvider;
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -38,9 +42,6 @@ import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.ECKey;
 import com.google.bitcoin.core.Wallet;
 
-import de.schildbach.wallet.AddressBookProvider;
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 
 public class WalletAddressesAdapter extends BaseAdapter

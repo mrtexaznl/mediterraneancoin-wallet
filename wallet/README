@@ -2,7 +2,7 @@ FILES
 
 Your wallet and your private keys are stored in app internal storage:
 
-/data/data/de.schildbach.wallet.mediterraneancoin/files/wallet-protobuf (MODE_PRIVATE)
+/data/data/org.mediterraneancoin.wallet.mediterraneancoin/files/wallet-protobuf (MODE_PRIVATE)
 	Wallet for Mainnet
 
 /data/data/de.schildbach.wallet_test/files/wallet-protobuf-testnet (MODE_WORLD_READABLE | MODE_WORLD_WRITEABLE)
@@ -13,7 +13,7 @@ which should be compatible between clients using bitcoinj.
 
 Certain actions cause automatic rolling backups of your private keys to app-private storage:
 
-/data/data/de.schildbach.wallet/files/key-backup-base58 (MODE_PRIVATE)
+/data/data/org.mediterraneancoin.wallet/files/key-backup-base58 (MODE_PRIVATE)
 	Automatic backups of private keys for Mainnet
 
 /data/data/de.schildbach.wallet_test/files/key-backup-base58-testnet (MODE_PRIVATE)

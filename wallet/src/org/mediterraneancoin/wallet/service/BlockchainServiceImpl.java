@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.service;
+package org.mediterraneancoin.wallet.service;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,6 +35,15 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.mediterraneancoin.wallet.AddressBookProvider;
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.WalletApplication;
+import org.mediterraneancoin.wallet.WalletBalanceWidgetProvider;
+import org.mediterraneancoin.wallet.ui.WalletActivity;
+import org.mediterraneancoin.wallet.util.CrashReporter;
+import org.mediterraneancoin.wallet.util.GenericUtils;
+import org.mediterraneancoin.wallet.util.ThrottlingWalletChangeListener;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -85,15 +94,6 @@ import com.google.bitcoin.store.BlockStoreException;
 import com.google.bitcoin.store.SPVBlockStore;
 import com.google.common.util.concurrent.Service.State;
 
-import de.schildbach.wallet.AddressBookProvider;
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.WalletApplication;
-import de.schildbach.wallet.WalletBalanceWidgetProvider;
-import de.schildbach.wallet.ui.WalletActivity;
-import de.schildbach.wallet.util.CrashReporter;
-import de.schildbach.wallet.util.GenericUtils;
-import de.schildbach.wallet.util.ThrottlingWalletChangeListener;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 import java.util.logging.Level;
 

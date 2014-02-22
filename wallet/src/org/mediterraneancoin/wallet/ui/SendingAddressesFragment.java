@@ -15,12 +15,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.AddressBookProvider;
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.ui.InputParser.StringInputParser;
+import org.mediterraneancoin.wallet.util.BitmapFragment;
+import org.mediterraneancoin.wallet.util.Qr;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 
 import android.app.Activity;
 import android.content.Context;
@@ -49,12 +56,6 @@ import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.Transaction;
 import com.google.bitcoin.uri.BitcoinURI;
 
-import de.schildbach.wallet.AddressBookProvider;
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.ui.InputParser.StringInputParser;
-import de.schildbach.wallet.util.BitmapFragment;
-import de.schildbach.wallet.util.Qr;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 
 /**

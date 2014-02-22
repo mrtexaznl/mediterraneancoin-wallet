@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.util;
+package org.mediterraneancoin.wallet.util;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -29,11 +29,11 @@ import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 
+import org.mediterraneancoin.wallet.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import android.content.res.AssetManager;
-import de.schildbach.wallet.Constants;
 
 /**
  * @author Andreas Schildbach

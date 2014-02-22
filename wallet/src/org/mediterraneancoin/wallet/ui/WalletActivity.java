@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -41,6 +41,17 @@ import java.util.List;
 import java.util.TimeZone;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.WalletApplication;
+import org.mediterraneancoin.wallet.ui.InputParser.BinaryInputParser;
+import org.mediterraneancoin.wallet.ui.InputParser.StringInputParser;
+import org.mediterraneancoin.wallet.util.CrashReporter;
+import org.mediterraneancoin.wallet.util.Crypto;
+import org.mediterraneancoin.wallet.util.HttpGetThread;
+import org.mediterraneancoin.wallet.util.Iso8601Format;
+import org.mediterraneancoin.wallet.util.Nfc;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -75,16 +86,6 @@ import com.google.bitcoin.core.ECKey;
 import com.google.bitcoin.core.Transaction;
 import com.google.bitcoin.core.Wallet;
 
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.WalletApplication;
-import de.schildbach.wallet.ui.InputParser.BinaryInputParser;
-import de.schildbach.wallet.ui.InputParser.StringInputParser;
-import de.schildbach.wallet.util.CrashReporter;
-import de.schildbach.wallet.util.Crypto;
-import de.schildbach.wallet.util.HttpGetThread;
-import de.schildbach.wallet.util.Iso8601Format;
-import de.schildbach.wallet.util.Nfc;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 
 /**

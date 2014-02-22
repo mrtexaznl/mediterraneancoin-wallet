@@ -15,9 +15,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.math.BigInteger;
+
+import org.mediterraneancoin.wallet.ui.InputParser.StringInputParser;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -28,7 +30,6 @@ import android.os.Bundle;
 import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.Transaction;
 
-import de.schildbach.wallet.ui.InputParser.StringInputParser;
 
 /**
  * @author Andreas Schildbach

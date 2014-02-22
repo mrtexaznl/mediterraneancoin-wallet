@@ -15,11 +15,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.math.BigInteger;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.util.GenericUtils;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -30,9 +34,6 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.util.GenericUtils;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 
 /**

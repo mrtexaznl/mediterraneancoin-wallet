@@ -15,17 +15,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import javax.annotation.CheckForNull;
+
+import org.mediterraneancoin.wallet.service.BlockchainService;
+import org.mediterraneancoin.wallet.service.BlockchainServiceImpl;
 
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
-import de.schildbach.wallet.service.BlockchainService;
-import de.schildbach.wallet.service.BlockchainServiceImpl;
 
 /**
  * @author Andreas Schildbach

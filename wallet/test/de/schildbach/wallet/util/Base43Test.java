@@ -21,6 +21,7 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.mediterraneancoin.wallet.util.Base43;
 
 /**
  * @author Andreas Schildbach

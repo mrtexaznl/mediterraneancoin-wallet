@@ -15,15 +15,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import javax.annotation.Nonnull;
+
+import org.mediterraneancoin.wallet.Constants;
 
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import de.schildbach.wallet.Constants;
 
 /**
  * @author Andreas Schildbach

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package de.schildbach.wallet.util;
+package org.mediterraneancoin.wallet.util;
 
 import java.nio.charset.Charset;
 

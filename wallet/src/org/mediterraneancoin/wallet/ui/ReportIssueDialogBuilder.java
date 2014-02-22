@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,6 +29,9 @@ import java.util.ArrayList;
 
 import javax.annotation.CheckForNull;
 
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.util.CrashReporter;
+import org.mediterraneancoin.wallet.util.Io;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,9 +46,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.util.CrashReporter;
-import de.schildbach.wallet.util.Io;
 import de.schildbach.wallet_test.R;
 
 /**

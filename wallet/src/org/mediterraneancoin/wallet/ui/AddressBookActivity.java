@@ -15,10 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.util.ViewPagerTabs;
 
 import android.content.Context;
 import android.content.Intent;
@@ -33,8 +36,6 @@ import com.actionbarsherlock.view.MenuItem;
 import com.google.bitcoin.core.Address;
 import com.google.bitcoin.core.ECKey;
 
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.util.ViewPagerTabs;
 import de.schildbach.wallet_test.R;
 
 /**

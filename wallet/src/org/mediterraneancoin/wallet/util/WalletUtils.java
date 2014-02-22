@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.util;
+package org.mediterraneancoin.wallet.util;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -36,6 +36,8 @@ import java.util.regex.Pattern;
 import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import org.mediterraneancoin.wallet.Constants;
 
 import android.graphics.Typeface;
 import android.text.Editable;
@@ -58,7 +60,6 @@ import com.google.bitcoin.core.TransactionOutput;
 import com.google.bitcoin.core.Wallet;
 import com.google.bitcoin.script.Script;
 
-import de.schildbach.wallet.Constants;
 
 /**
  * @author Andreas Schildbach

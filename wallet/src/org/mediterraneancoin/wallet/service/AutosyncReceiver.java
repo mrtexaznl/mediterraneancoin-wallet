@@ -15,15 +15,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.service;
+package org.mediterraneancoin.wallet.service;
 
+import org.mediterraneancoin.wallet.WalletApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import de.schildbach.wallet.WalletApplication;
 
 /**
  * @author Andreas Schildbach

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet;
+package org.mediterraneancoin.wallet;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,6 +34,12 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nonnull;
 
+import org.mediterraneancoin.wallet.service.BlockchainService;
+import org.mediterraneancoin.wallet.service.BlockchainServiceImpl;
+import org.mediterraneancoin.wallet.util.CrashReporter;
+import org.mediterraneancoin.wallet.util.Io;
+import org.mediterraneancoin.wallet.util.LinuxSecureRandom;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -70,12 +76,6 @@ import com.google.bitcoin.store.WalletProtobufSerializer;
 import com.google.bitcoin.utils.Threading;
 import com.google.bitcoin.wallet.WalletFiles;
 
-import de.schildbach.wallet.service.BlockchainService;
-import de.schildbach.wallet.service.BlockchainServiceImpl;
-import de.schildbach.wallet.util.CrashReporter;
-import de.schildbach.wallet.util.Io;
-import de.schildbach.wallet.util.LinuxSecureRandom;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 
 /**

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.math.BigInteger;
 
@@ -23,10 +23,11 @@ import javax.annotation.CheckForNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import org.mediterraneancoin.wallet.ExchangeRatesProvider.ExchangeRate;
+import org.mediterraneancoin.wallet.ui.CurrencyAmountView.Listener;
+import org.mediterraneancoin.wallet.util.WalletUtils;
+
 import android.view.View;
-import de.schildbach.wallet.ExchangeRatesProvider.ExchangeRate;
-import de.schildbach.wallet.ui.CurrencyAmountView.Listener;
-import de.schildbach.wallet.util.WalletUtils;
 
 /**
  * @author Andreas Schildbach

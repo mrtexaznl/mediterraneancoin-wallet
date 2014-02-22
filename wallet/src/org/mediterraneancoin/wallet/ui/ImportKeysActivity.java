@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.schildbach.wallet.ui;
+package org.mediterraneancoin.wallet.ui;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -25,6 +25,10 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.List;
+
+import org.mediterraneancoin.wallet.Constants;
+import org.mediterraneancoin.wallet.util.Crypto;
+import org.mediterraneancoin.wallet.util.WalletUtils;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -41,9 +45,6 @@ import android.widget.EditText;
 import com.google.bitcoin.core.ECKey;
 import com.google.bitcoin.core.Wallet;
 
-import de.schildbach.wallet.Constants;
-import de.schildbach.wallet.util.Crypto;
-import de.schildbach.wallet.util.WalletUtils;
 import de.schildbach.wallet_test.R;
 
 /**
