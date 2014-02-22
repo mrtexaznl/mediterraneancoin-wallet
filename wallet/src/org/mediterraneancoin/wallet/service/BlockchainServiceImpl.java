@@ -83,6 +83,7 @@ import com.google.bitcoin.script.Script;
 import com.google.bitcoin.store.BlockStore;
 import com.google.bitcoin.store.BlockStoreException;
 import com.google.bitcoin.store.SPVBlockStore;
+import com.google.common.util.concurrent.Service.State;
 
 import de.schildbach.wallet.AddressBookProvider;
 import de.schildbach.wallet.Constants;
@@ -346,7 +347,7 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 		@Override
 		public void onBlocksDownloaded(final Peer peer, final Block block, final int blocksLeft)
 		{
-                        log.info("PeerEventListener blockchainDownloadListener - onBlocksDownloaded");
+            log.info("PeerEventListener blockchainDownloadListener - onBlocksDownloaded");
                         
 			bestChainHeightEver = Math.max(bestChainHeightEver, blockChain.getChainHead().getHeight());
 
@@ -366,6 +367,8 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 			public void run()
 			{
 				lastMessageTime.set(System.currentTimeMillis());
+				
+				log.info("blockchainDownloadListener - runnable - run");
 
 				sendBroadcastBlockchainState(ACTION_BLOCKCHAIN_STATE_DOWNLOAD_OK);
 			}
@@ -488,8 +491,18 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 					}
 				});
 
+				
+				log.info("peerGroup.start()");
 				// start peergroup
 				peerGroup.start();
+				
+				while (peerGroup.state() == State.STARTING) {
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) { 
+					}
+				}
+				
 				peerGroup.startBlockChainDownload(blockchainDownloadListener);
 			}
 			else if (!hasEverything && peerGroup != null)
@@ -708,19 +721,20 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 			throw new Error("blockchain cannot be created", x);
 		}
                 
-                log.info("before addEventListener...");
+        log.info("before addEventListener...");
 
 		application.getWallet().addEventListener(walletEventListener);
+		
                 
-                log.info("before registerReceiver....");
+        log.info("before registerReceiver....");
 
 		registerReceiver(tickReceiver, new IntentFilter(Intent.ACTION_TIME_TICK));
                 
-                log.info("before maybeRotateKeys.....");
+        log.info("before maybeRotateKeys.....");
 
 		maybeRotateKeys();
                 
-                log.info("onCreate - finish");
+        log.info("onCreate - finish");
 	}
 
 	@Override
@@ -894,6 +908,8 @@ public class BlockchainServiceImpl extends android.app.Service implements Blockc
 		broadcast.putExtra(ACTION_BLOCKCHAIN_STATE_BEST_CHAIN_HEIGHT, chainHead.getHeight());
 		broadcast.putExtra(ACTION_BLOCKCHAIN_STATE_REPLAYING, chainHead.getHeight() < bestChainHeightEver);
 		broadcast.putExtra(ACTION_BLOCKCHAIN_STATE_DOWNLOAD, download);
+		
+		log.info( "sendBroadcastBlockchainState - " + broadcast.describeContents() );
 
 		sendStickyBroadcast(broadcast);
 	}
