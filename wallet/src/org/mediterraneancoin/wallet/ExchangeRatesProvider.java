@@ -81,12 +81,16 @@ public class ExchangeRatesProvider extends ContentProvider
 	private Map<String, ExchangeRate> exchangeRates = null;
 	private long lastUpdated = 0;
 
-	private static final URL BITCOINAVERAGE_URL;
+	/*private static final URL BITCOINAVERAGE_URL;
 	private static final String[] BITCOINAVERAGE_FIELDS = new String[] { "24h_avg" };
 	private static final URL BITCOINCHARTS_URL;
 	private static final String[] BITCOINCHARTS_FIELDS = new String[] { "24h", "7d", "30d" };
 	private static final URL BLOCKCHAININFO_URL;
-	private static final String[] BLOCKCHAININFO_FIELDS = new String[] { "15m" };
+	private static final String[] BLOCKCHAININFO_FIELDS = new String[] { "15m" };*/
+	
+	private static final URL MED_ATOMIC_TRADE_URL;
+	private static final String[] MED_ATOMIC_TRADE_FIELDS = new String[] { "price" };
+	
 
 	// https://bitmarket.eu/api/ticker
 
@@ -94,9 +98,11 @@ public class ExchangeRatesProvider extends ContentProvider
 	{
 		try
 		{
-			BITCOINAVERAGE_URL = new URL("https://api.bitcoinaverage.com/ticker/all");
+			MED_ATOMIC_TRADE_URL = new URL("https://www.atomic-trade.com/GetPrices?c=MED&p=BTC");
+						
+			/*BITCOINAVERAGE_URL = new URL("https://api.bitcoinaverage.com/ticker/all");
 			BITCOINCHARTS_URL = new URL("http://api.bitcoincharts.com/v1/weighted_prices.json");
-			BLOCKCHAININFO_URL = new URL("https://blockchain.info/ticker");
+			BLOCKCHAININFO_URL = new URL("https://blockchain.info/ticker");*/
 		}
 		catch (final MalformedURLException x)
 		{
@@ -127,13 +133,19 @@ public class ExchangeRatesProvider extends ContentProvider
 		if (exchangeRates == null || now - lastUpdated > UPDATE_FREQ_MS)
 		{
 			Map<String, ExchangeRate> newExchangeRates = null;
+			
+			if (newExchangeRates == null)
+				newExchangeRates = requestExchangeRates(MED_ATOMIC_TRADE_URL, MED_ATOMIC_TRADE_FIELDS);
+			
+			/*
 			if (newExchangeRates == null)
 				newExchangeRates = requestExchangeRates(BITCOINAVERAGE_URL, BITCOINAVERAGE_FIELDS);
 			if (newExchangeRates == null)
 				newExchangeRates = requestExchangeRates(BITCOINCHARTS_URL, BITCOINCHARTS_FIELDS);
 			if (newExchangeRates == null)
 				newExchangeRates = requestExchangeRates(BLOCKCHAININFO_URL, BLOCKCHAININFO_FIELDS);
-
+			*/
+			
 			if (newExchangeRates != null)
 			{
 				exchangeRates = newExchangeRates;
@@ -248,9 +260,35 @@ public class ExchangeRatesProvider extends ContentProvider
 				final Map<String, ExchangeRate> rates = new TreeMap<String, ExchangeRate>();
 
 				final JSONObject head = new JSONObject(content.toString());
+				
+				String priceStr = head.getString("price").trim();
+				
+				if (priceStr != null) {
+					
+					try
+					{
+						final BigInteger rate = GenericUtils.toNanoCoins(priceStr, 0);
+						
+						log.info("rate: " + rate);
+
+						if (rate.signum() > 0)
+						{
+							rates.put("BTC", new ExchangeRate("BTC", rate, url.getHost()));
+						}
+					}
+					catch (final ArithmeticException x)
+					{
+						log.warn("problem fetching exchange rate: " + "MED/BTC", x);
+					}					
+					
+					return rates;
+				}
+				
+				
 				for (final Iterator<String> i = head.keys(); i.hasNext();)
 				{
 					final String currencyCode = i.next();
+					
 					if (!"timestamp".equals(currencyCode))
 					{
 						final JSONObject o = head.getJSONObject(currencyCode);
